@@ -5,6 +5,13 @@
       <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
       <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
       <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
+
+      <q-carousel-control position="bottom-right" :offset="[18, 18]" class="q-gutter-xs">
+        <div class="main">
+          <b class="title">孔子的中心思想是個仁</b>
+
+        </div>
+      </q-carousel-control>
     </q-carousel>
   </div>
 </template>
