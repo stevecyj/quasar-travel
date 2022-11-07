@@ -1,14 +1,19 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="bg-grey-1 text-orange-13">
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-
         <q-toolbar-title>
-          Quasar App
+          好想旅遊
         </q-toolbar-title>
+        <q-space />
+        <q-btn-toggle v-model="model" flat stretch toggle-color="grey-10" :options="[
+          { label: 'One', value: 'one' },
+          { label: 'Two', value: 'two' },
+          { label: 'Three', value: 'three' }
+        ]" />
 
-        <div>Quasar v{{ $q.version }}</div>
+        <!-- <div>Quasar v{{ $q.version }}</div> -->
       </q-toolbar>
     </q-header>
 
@@ -81,6 +86,12 @@ const linksList = [
   }
 ]
 
+const btnOptions = [
+  { label: 'One', value: 'one' },
+  { label: 'Two', value: 'two' },
+  { label: 'Three', value: 'three' }
+]
+
 export default defineComponent({
   name: 'MainLayout',
 
@@ -90,6 +101,7 @@ export default defineComponent({
 
   setup () {
     const leftDrawerOpen = ref(false)
+    const model = ref('one')
 
     const toggleLeftDrawer = () => {
 
@@ -104,9 +116,17 @@ export default defineComponent({
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
+      model,
+      options: btnOptions,
       toggleLeftDrawer,
       alert
     }
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.bg_klook_primary {
+  background-color: $klook_primary;
+}
+</style>
