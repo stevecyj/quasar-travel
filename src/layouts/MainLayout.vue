@@ -17,7 +17,7 @@
 
         <q-list>
           <q-item-label header class="q-item__label--caption">
-            Essential Links
+            好想旅遊
           </q-item-label>
 
           <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
@@ -28,9 +28,6 @@
 
     <q-page-container>
       <router-view />
-      <q-page-sticky position="top-right" :offset="[36, 36]">
-        <q-btn round color="accent" @click="alert" icon="alarm" />
-      </q-page-sticky>
     </q-page-container>
   </q-layout>
 </template>
@@ -43,31 +40,31 @@ const linksList = [
   {
     title: '登入',
     caption: '登的入',
-    icon: 'record_voice_over',
+    icon: 'fas fa-sign-in-alt',
     link: 'https://forum.quasar.dev'
   },
   {
     title: '註冊',
     caption: '註冊',
-    icon: 'rss_feed',
+    icon: 'fas fa-edit',
     link: 'https://twitter.quasar.dev'
   },
   {
     title: '精選景點',
     caption: '精選的景點',
-    icon: 'school',
+    icon: 'fas fa-search-location',
     link: 'https://quasar.dev'
   },
   {
     title: '美食地圖',
     caption: '美食的地圖',
-    icon: 'code',
+    icon: 'fas fa-map-marked-alt',
     link: 'https://github.com/quasarframework'
   },
   {
     title: '夜宿曉行',
     caption: '夜宿的曉行',
-    icon: 'chat',
+    icon: 'fas fa-utensils',
     link: 'https://chat.quasar.dev'
   },
   {
