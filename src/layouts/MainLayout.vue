@@ -2,22 +2,17 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar class="bg-grey-1 text-orange-13">
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
         <q-toolbar-title>
           好想旅遊
         </q-toolbar-title>
-        <q-space />
-        <q-btn-toggle v-model="model" flat stretch toggle-color="grey-10" :options="[
-          { label: 'One', value: 'one' },
-          { label: 'Two', value: 'two' },
-          { label: 'Three', value: 'three' }
-        ]" />
-
-        <!-- <div>Quasar v{{ $q.version }}</div> -->
+        <div class="gt-xs">
+          <q-btn-toggle v-model="model" flat stretch toggle-color="grey-10" :options="options" />
+        </div>
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" side="left" show-if-above bordered>
+    <q-drawer v-model="rightDrawerOpen" side="right" show-if-above bordered>
       <q-list>
         <q-item-label header>
           Essential Links
@@ -100,12 +95,12 @@ export default defineComponent({
   },
 
   setup () {
-    const leftDrawerOpen = ref(false)
+    const rightDrawerOpen = ref(false)
     const model = ref('one')
 
-    const toggleLeftDrawer = () => {
+    const toggleRightDrawer = () => {
 
-      leftDrawerOpen.value = !leftDrawerOpen.value
+      rightDrawerOpen.value = !rightDrawerOpen.value
       console.log('toggleDrawer');
     }
 
@@ -115,10 +110,10 @@ export default defineComponent({
 
     return {
       essentialLinks: linksList,
-      leftDrawerOpen,
+      rightDrawerOpen,
       model,
       options: btnOptions,
-      toggleLeftDrawer,
+      toggleRightDrawer,
       alert
     }
   }
