@@ -12,14 +12,17 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="rightDrawerOpen" side="right" show-if-above bordered>
-      <q-list>
-        <q-item-label header>
-          Essential Links
-        </q-item-label>
+    <q-drawer v-model="rightDrawerOpen" class="bg-grey-10 text-white" side="right" show-if-above bordered>
+      <div>
 
-        <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
-      </q-list>
+        <q-list>
+          <q-item-label header class="q-item__label--caption">
+            Essential Links
+          </q-item-label>
+
+          <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
+        </q-list>
+      </div>
     </q-drawer>
 
 
@@ -38,34 +41,34 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
+    title: '登入',
+    caption: '登的入',
     icon: 'record_voice_over',
     link: 'https://forum.quasar.dev'
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
+    title: '註冊',
+    caption: '註冊',
     icon: 'rss_feed',
     link: 'https://twitter.quasar.dev'
+  },
+  {
+    title: '精選景點',
+    caption: '精選的景點',
+    icon: 'school',
+    link: 'https://quasar.dev'
+  },
+  {
+    title: '美食地圖',
+    caption: '美食的地圖',
+    icon: 'code',
+    link: 'https://github.com/quasarframework'
+  },
+  {
+    title: '夜宿曉行',
+    caption: '夜宿的曉行',
+    icon: 'chat',
+    link: 'https://chat.quasar.dev'
   },
   {
     title: 'Facebook',
