@@ -6,12 +6,14 @@
       <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
       <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
 
-      <q-carousel-control position="bottom-right" :offset="[18, 18]" class="q-gutter-xs">
-        <div class="main">
-          <b class="title">孔子的中心思想是個仁</b>
+      <template v-slot:control>
 
-        </div>
-      </q-carousel-control>
+        <q-carousel-control position="center" :offset="[0, 18]" class="q-gutter-xs">
+          <b class="title">一二三四五六七</b>
+          <p class="subtitle">仁的本性是</p>
+          <p> 這邊明天來做 Input </p>
+        </q-carousel-control>
+      </template>
     </q-carousel>
   </div>
 </template>
@@ -27,3 +29,29 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.q-carousel__control {
+  text-align: center;
+
+  @media (min-width: 768px) {
+    .title {
+      font-size: 48px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 24px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+    }
+  }
+}
+</style>
