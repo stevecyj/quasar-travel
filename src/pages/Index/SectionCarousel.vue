@@ -8,15 +8,15 @@
 
       <template v-slot:control>
 
-        <q-carousel-control position="center" :offset="[0, 18]" class="q-gutter-xs">
-          <b class="title">一二三四五六七</b>
+        <q-carousel-control :offset="[0, 18]" class="q-gutter-xs absolute-center">
+          <b class="title">一二三四五六七八九</b>
           <p class="subtitle">仁的本性是</p>
           <p> 這邊明天來做 Input </p>
 
           <!-- 搜尋框 start-->
-          <q-select bg-color="grey-1" filled :model-value="model" use-input hide-selected fill-input
-            input-debounce="500" :options="options" @filter="advFilter" @input-value="setModel"
-            style="width: 250px; padding-bottom: 32px">
+          <q-select label="輸入城市/景點" dropdown-icon="fas fa-search-location" bg-color="grey-1" filled :model-value="model"
+            use-input hide-selected fill-input input-debounce="500" :options="options" @filter="advFilter"
+            @input-value="setModel" style="padding-bottom: 32px">
             <template v-slot:no-option>
               <q-item>
                 <q-item-section class="text-grey">
