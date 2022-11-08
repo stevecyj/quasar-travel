@@ -15,8 +15,8 @@
     <q-drawer v-model="rightDrawerOpen" class="bg-grey-10 text-white" side="right" show-if-above bordered>
       <div>
 
-        <q-list>
-          <q-item-label header class="q-item__label--caption">
+        <q-list class="text-white">
+          <q-item-label header>
             好想旅遊
           </q-item-label>
 
