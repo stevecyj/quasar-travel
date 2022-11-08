@@ -48,24 +48,26 @@ export default {
   setup () {
     const search = ref('')
     const options = ref(locations)
+    const model = ref(null)
 
     const advFilter = (terms, update, abort) => {
       update(() => {
-
         const result = _.filter(locations, context => {
-          console.log(terms, locations, context)
           return context.label.match(terms)
         })
         options.value = result
       })
-
     }
+
+    const setModel = (val) => { model.value = val }
 
     return {
       slide: ref(1),
       options,
       search,
-      advFilter
+      model,
+      advFilter,
+      setModel
     }
   }
 }
