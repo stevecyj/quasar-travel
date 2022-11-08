@@ -8,7 +8,7 @@
 
       <template v-slot:control>
 
-        <q-carousel-control :offset="[0, 18]" class="q-gutter-xs absolute-center">
+        <q-carousel-control :offset="[-5, 18]" class="q-gutter-xs absolute-center">
           <b class="title">一二三四五六七八九</b>
           <p class="subtitle">仁的本性是</p>
           <p> 這邊明天來做 Input </p>
@@ -16,7 +16,18 @@
           <!-- 搜尋框 start-->
           <q-select label="輸入城市/景點" dropdown-icon="fas fa-search-location" bg-color="grey-1" filled :model-value="model"
             use-input hide-selected fill-input input-debounce="500" :options="options" @filter="advFilter"
-            @input-value="setModel" style="padding-bottom: 32px">
+            @input-value="setModel" style="padding-bottom: 32px" behavior="menu">
+            <!-- option start-->
+            <template v-slot:option="scope">
+              <q-item>
+                <q-item-section avatar>
+                  <q-icon :name="scope.opt.icon"></q-icon>
+                </q-item-section>
+              </q-item>
+            </template>
+            <!-- option end -->
+
+            <!-- no option start-->
             <template v-slot:no-option>
               <q-item>
                 <q-item-section class="text-grey">
@@ -24,6 +35,7 @@
                 </q-item-section>
               </q-item>
             </template>
+            <!-- no option end-->
           </q-select>
           <!-- 搜尋框 end -->
         </q-carousel-control>
@@ -40,8 +52,8 @@ const locations = [
   { label: '台北市', icon: 'fas fa-map-marker-alt' },
   { label: '新北市', icon: 'fas fa-map-marker-alt' },
   { label: '台中市', icon: 'fas fa-map-marker-alt' },
-  { label: '「網美景點」台中秋紅谷，秋季賞楓勝地', stamp: '台中市' },
-  { label: '東京台場「獨角獸鋼彈」強勢來襲！精彩變身演出搶先看', stamp: '東京, 台場', rightTextColor: 'pink-13' }
+  { label: '「網美景點」台中秋紅谷，秋季賞楓勝地', icon: 'fas fa-map-marker-alt', stamp: '台中市' },
+  { label: '東京台場「獨角獸鋼彈」強勢來襲！精彩變身演出搶先看', icon: 'fas fa-map-marker-alt', stamp: '東京, 台場', rightTextColor: 'pink-13' }
 ]
 
 export default {
@@ -96,5 +108,9 @@ export default {
       font-size: 16px;
     }
   }
+}
+
+.q_item {
+  width: 100%;
 }
 </style>
