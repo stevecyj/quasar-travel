@@ -12,7 +12,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="rightDrawerOpen" class="bg-grey-10 text-white" side="right" show-if-above bordered>
+    <q-drawer v-model="rightDrawerOpen" class="bg-grey-10 text-white" side="right" show-if-above>
       <div>
 
         <q-list class="text-white">
